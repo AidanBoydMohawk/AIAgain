@@ -22,7 +22,7 @@ public class Shoot : MonoBehaviour
     {
         if(collision.gameObject.tag == "Enemy")
         {
-            Destroy(collision.gameObject);
+            Destroy(collision.gameObject); //destroy enemy upon contact
         }
     }
 }

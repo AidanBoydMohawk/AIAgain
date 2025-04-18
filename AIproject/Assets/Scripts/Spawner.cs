@@ -17,19 +17,19 @@ public class Spawner : MonoBehaviour
     private void Start()
     {
         
-        StartCoroutine(spawning());
-        GameObject.FindGameObjectWithTag("Enemy");
+        StartCoroutine(spawning()); 
+        GameObject.FindGameObjectWithTag("Enemy"); //find object to spawn
         
     }
     IEnumerator spawning()
     {
         while (spawningBool == true)
         {
-            yield return new WaitForSeconds(spawnTime);
-           randomNum=(Random.Range(0,4));
+            yield return new WaitForSeconds(spawnTime); //set up time between spawning
+           randomNum=(Random.Range(0,4)); //4 different spawn points
             if (randomNum == 0)
             {
-                Instantiate(gameObject, spawnDes1.position, spawnDes1.rotation);
+                Instantiate(gameObject, spawnDes1.position, spawnDes1.rotation); // get the object, spawn position, and rotation
             }
             if (randomNum == 1)
             {

@@ -9,7 +9,7 @@ using UnityEngine.VFX;
 public class PlayerController : MonoBehaviour
 {
   
-    public float walkingSpeed = 7.5f;
+    public float walkingSpeed = 7.5f;  //code used from online to set up player movement. I did this because I am not a professional coder
     public float runningSpeed = 11.5f;
     public float jumpSpeed = 8.0f;
     public float gravity = 20.0f;
@@ -18,7 +18,7 @@ public class PlayerController : MonoBehaviour
     public float lookXLimit = 45.0f;
     public Transform firePoint;
     public float bulletForce = 20f;
-    public float health;
+    public float health; // set up health for the player
     public float maxHealth;
 
 
@@ -94,7 +94,7 @@ public class PlayerController : MonoBehaviour
 
         if(health == 0)
         {
-            Destroy(gameObject);
+            Destroy(gameObject); //destroy player if health gets to 0
         }
 
     }
@@ -102,7 +102,7 @@ public class PlayerController : MonoBehaviour
     {
         if (other.gameObject.name == "Spawner")
         {
-            other.gameObject.GetComponent<Spawner>().spawningBool = true;
+            other.gameObject.GetComponent<Spawner>().spawningBool = true; //tried to detect player to begin spawning enemies
         }
     }
 

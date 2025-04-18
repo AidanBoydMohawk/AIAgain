@@ -23,14 +23,14 @@ public class Enemy : MonoBehaviour
     {
         player = GameObject.Find("Player").transform;
         agent = GetComponent<NavMeshAgent>();
-        for (int Enemy = 100; Enemy > 99; Enemy--) ;
+        for (int Enemy = 100; Enemy > 99; Enemy--) ; //tried setting up enemy amount for spawning, but it did not work
        
     }
 
 
     public void SetPlayerInVisionCone(bool isVisible)
     {
-        isPLayerInVisionCone = isVisible;
+        isPLayerInVisionCone = isVisible; //used previous code for possible vision 
 
     }
     // Update is called once per frame
@@ -59,7 +59,7 @@ public class Enemy : MonoBehaviour
             {
                 if (hit.transform == player)
                 {
-                    lastKnownPlayerPos = player.transform.position;
+                    lastKnownPlayerPos = player.transform.position; // code used to always go towards the player. 
 
                 }
 
@@ -68,13 +68,13 @@ public class Enemy : MonoBehaviour
         }
        /* if(health == 0)
         {
-            Destroy(gameObject);
+            Destroy(gameObject); was used to have more hit points. went only using upon contact to destroy object 
         }
        */ 
     }
     public void OnTriggerEnter(Collider other)
     {
-        other.gameObject.GetComponent<PlayerController>().health -= 1;
+        other.gameObject.GetComponent<PlayerController>().health -= 1; //decrease players health by 1 upon contact 
     }
 
 }
